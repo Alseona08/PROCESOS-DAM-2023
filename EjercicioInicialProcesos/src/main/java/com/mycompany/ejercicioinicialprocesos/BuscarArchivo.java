@@ -43,10 +43,16 @@ public class BuscarArchivo {
             
             boolean encontrado=false;
             
-            while(((linea=br.readLine())!=null) && (!encontrado)){
-                if(linea.contains(archivo)){
-                    System.out.println(linea);
-                    encontrado=true;
+            String [] campos;//Array de strings con los campos de esa linea
+            
+            while(((linea=br.readLine())!=null)){
+                
+                campos=linea.split(" +");
+                if(campos.length==9){
+                    if(campos[8].contains(archivo)){
+                        System.out.println(linea);
+                        //encontrado=true;
+                    }
                 }
             }
             
