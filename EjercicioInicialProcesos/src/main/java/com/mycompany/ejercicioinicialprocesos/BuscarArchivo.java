@@ -5,6 +5,7 @@
 package com.mycompany.ejercicioinicialprocesos;
 
 import java.io.BufferedReader;
+import java.io.File;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import javax.swing.JOptionPane;
@@ -28,6 +29,9 @@ public class BuscarArchivo {
             ProcessBuilder pb=new ProcessBuilder("ls","-ln");
             
             //pb.inheritIO(); esto puede causar que la entrada y salida se mezclen
+            
+            File f=new File("/home/alex/Documentos/PROCESOS-DAM-2023/EjercicioInicialProcesos/");
+            pb.directory(f);
         
             Process p=pb.start();//Creamos uns instancia de ese proceso
             
